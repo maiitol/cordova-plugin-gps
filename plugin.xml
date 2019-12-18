@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+        id="com.adp.gps"
+        version="0.7.0">
+
+  <name>GPS</name>
+
+  <engines>
+    <engine name="cordova" version=">=3.4.0"/>
+  </engines>
+
+  <asset src="www/gps.js" target="js/gps.js"/>
+
+  <js-module src="www/gps.js" name="gps">
+    <clobbers target="gps" />
+  </js-module>
+
+  <platform name="android">
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="Gps">
+        <param name="android-package" value="com.adp.plugin.Gps"/>
+      </feature>
+    </config-file>
+
+    <source-file src="src/android/Gps.java" target-dir="src/com/adp/plugin/"/>
+  </platform>
+</plugin>
